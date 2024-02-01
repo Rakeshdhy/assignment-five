@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  position: relative;
+
+}
+
+
+#model-box {
+    margin:auto;
+    padding:0;
+    width: calc(100% - 100px);
+    height:  calc(100% - 100px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background: #ececec;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+  }
+
+  .button {
+    margin:auto;
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background: #47b1ff;
+    border-radius: 55px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    overflow: hidden;
+  }
+  .button .content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    transition-delay: 0.2s;
+  }
+  
+  .button .content i,
+  .button .content .button-text {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 500;
+  }
+  .button .content .button-text {
+    font-size: 21px;
+    margin-left: 8px;
+  }
+  
+#text{
+  margin-top: 40px;
+  color: #868686;
+  font-size: 21px;
+  display: block;
+}
+
+
+
+  .percent {
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background: #48b2fe;
+    border-radius: 55px;
+    transition: all 6s ease-in-out;
+  }
+  .progress-bar.active .button::before {
+    animation: layer 6s ease-in-out forwards;
+  }
+  .progress-bar.active .button {
+    height: 20px;
+    width: 500px;
+    background: #ececec;
+  }
+  .progress-bar.active .button .content {
+    transform: translateY(60px);
+  }
+  .progress-bar.active .percent {
+    transform: translate(0);
+  }
+  @keyframes layer {
+    100% {
+      left: 0;
+    }
+  }
